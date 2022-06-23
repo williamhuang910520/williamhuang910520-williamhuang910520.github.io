@@ -1,215 +1,438 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tw">
+
 <head>
-    <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>我的簡歷</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>HusTissue</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/src/style.css">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <!--登入api-->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="login.js"></script>
+    <!--登入api-->
+    <script src="hide-navbar.js"></script>
 </head>
 
-<body style="background-color: #F7F7F7">
-    <div style="width: 1000px; margin: auto; " >
-    
-        <div class="slider">
-            <div style="padding: 20px;">
-                <img id="head" src="me.jpg"/>
+<body class="bg-dark">
 
-                <div class="comp2">
-                    <div class="tabTitle">
-                        <h2 class="tabTitle_text">
-                            # 特殊技能
-                        </h2>
-                        <div class="line"></div>
-                    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- <div class="container"> -->
+    <nav id="navbar" class="navbar navbar-expand-sm navbar-dark bg-dark  ">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center flex-row-reverse " href="/index.html">
+                <div class="padding-left">HusTissue</div>
+                <img src="/src/image/logo.png" width="35" height="35" class="d-inline-block align-text-top ">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="d-flex">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav" id="lnavbarliItems">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about-us.html">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/tech.html">技術規格</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/buy.html">購買</a>
+                        </li>
+                    </ul>
+                    <a class="btn-coolest" id="login-member-center" href="/login.html">登入</a>
                 </div>
-                <!-- <div style="height: 12px;"></div> -->
-
-                <div class="tab" style="height: 460px;">
-                    <div class="item">
-                        <div class="container4">
-                            <p class="T1">攝影</p>
-                            <div class="Box">
-                                <div class="light" style="width: 75%"></div>
-                            </div>
-                            <p class="T3">可接案</p>
-                        </div>
-                    </div>
-
-                    <div class="item" style="padding-top: 30px">
-                        <div class="container4">
-                            <p class="T1">Photoshop</p>
-                            <div class="Box">
-                                <div class="light" style="width: 75%"></div>
-                            </div>
-                            <p class="T3">可接案</p>
-                        </div>
-                    </div>
-
-                    <div class="item" style="padding-top: 30px">
-                        <div class="container4">
-                            <p class="T1">影片剪輯</p>
-                            <div class="Box">
-                                <div class="light" style="width: 50%"></div>
-                            </div>
-                            <p class="T3">學習中</p>
-                        </div>
-                    </div>
-
-                    <div class="item" style="padding-top: 30px">
-                        <div class="container4">
-                            <p class="T1">Android Studio</p>
-                            <div class="Box">
-                                <div class="light" style="width: 40%"></div>
-                            </div>
-                            <p class="T3">學習中</p>
-                        </div>
-                    </div>
-
-                    <div class="item" style="padding-top: 30px">
-                        <div class="container4">
-                            <p class="T1">C++</p>
-                            <div class="Box">
-                                <div class="light" style="width: 40%"></div>
-                            </div>
-                            <p class="T3">學習中</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                
-            
-
-
-                <div class="comp2">
-                    <div class="tabTitle">
-                        <h2 class="tabTitle_text">
-                            # 聯絡資訊
-                        </h2>
-                        <div class="line"></div>
-                    </div>
-                </div>
-
-                <div class="tab">
-                    <div class="item">
-                        <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 48 48" width="32"><path d="M0 0h48v48h-48z" fill="none"/><path d="M13.25 21.59c2.88 5.66 7.51 10.29 13.18 13.17l4.4-4.41c.55-.55 1.34-.71 2.03-.49 2.24.74 4.65 1.14 7.14 1.14 1.11 0 2 .89 2 2v7c0 1.11-.89 2-2 2-18.78 0-34-15.22-34-34 0-1.11.9-2 2-2h7c1.11 0 2 .89 2 2 0 2.49.4 4.9 1.14 7.14.22.69.06 1.48-.49 2.03l-4.4 4.42z"/></svg>
-                        <div calss="texts">
-                            <p class="T1">電話</p>
-                            <p class="T2">0933030552</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 48 48" width="32"><path d="M40 8H8c-2.21 0-3.98 1.79-3.98 4L4 36c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zm0 8L24 26 8 16v-4l16 10 16-10v4z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
-                        <div calss="texts">
-                            <p class="T1">電子郵件</p>
-                            <p class="T2">williamhuang910520@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <?xml version="1.0"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink" height="32" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="32" xml:space="preserve"><path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/></svg>
-                        <div calss="texts">
-                            <p class="T1">YOUTUBE</p>
-                            <p class="T2">憨吉 Hanchi</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="32" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 56.7 56.7" enable-background="new 0 0 56.7 56.7" xml:space="preserve" >
-                            <g>
-                                <path d="M28.2,16.7c-7,0-12.8,5.7-12.8,12.8s5.7,12.8,12.8,12.8S41,36.5,41,29.5S35.2,16.7,28.2,16.7z M28.2,37.7   c-4.5,0-8.2-3.7-8.2-8.2s3.7-8.2,8.2-8.2s8.2,3.7,8.2,8.2S32.7,37.7,28.2,37.7z"/>
-                                <circle cx="41.5" cy="16.4" r="2.9"/>
-                                <path d="M49,8.9c-2.6-2.7-6.3-4.1-10.5-4.1H17.9c-8.7,0-14.5,5.8-14.5,14.5v20.5c0,4.3,1.4,8,4.2,10.7c2.7,2.6,6.3,3.9,10.4,3.9   h20.4c4.3,0,7.9-1.4,10.5-3.9c2.7-2.6,4.1-6.3,4.1-10.6V19.3C53,15.1,51.6,11.5,49,8.9z M48.6,39.9c0,3.1-1.1,5.6-2.9,7.3   s-4.3,2.6-7.3,2.6H18c-3,0-5.5-0.9-7.3-2.6C8.9,45.4,8,42.9,8,39.8V19.3c0-3,0.9-5.5,2.7-7.3c1.7-1.7,4.3-2.6,7.3-2.6h20.6   c3,0,5.5,0.9,7.3,2.7c1.7,1.8,2.7,4.3,2.7,7.2V39.9L48.6,39.9z"/>
-                            </g>
-                            </svg>
-                        <div calss="texts">
-                            <p class="T1">INSTGRAM</p>
-                            <p class="T2">@hanchi_photato</p>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                
-            </div>
-
+            </form>
         </div>
+    </nav>
 
-        <div class="body">
-            <div style="padding: 60px; height:100vh;">
 
-                <div class="comp">
-                    <div class="aboutMe">
-                        <h1>黃韋誠</h1>
-                        <h4>雲林科技大學 資訊工程系</h4>
-                        <p>
-                            一隻亂點技能樹的哈士奇。目前兼職攝影、影視及後製相關。
-                            專精PS、AE、PR，用他們的時間比睡覺時間還久。
-                            熟悉C++、java程式語言，曾自學Android Studio開發簡易的賣家計帳APP，在園遊會上使用。
-                        </p>
+    <!-- main body -->
+    <section id="page1" class="page">
+        <div class="p-5 bg-dark">
+            <!-- <div class="container"> -->
+            <div class="row ">
+                <h1 class="display-3 text-center">庶民享受，尊爵不凡</h1>
+                <div class="col-8 offset-2">
+
+                    <img src="src/image/main.png" class="img-fluid">
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </section>
+
+    <section id="page2" class="page">
+        <div class="bg-dark">
+            <div class="container-fluid nopadding">
+                <div class="row nopadding height-500px">
+                    <div class="col-7 nopadding vertical-mid">
+                        <img src="src/image/toilet-paper-2.png" class="img-fluid">
                     </div>
-                </div>
-                <p>
-                 <p>
-                     
-                <div class="tabTitle">
-                    <h2 class="tabTitle_text">
-                        # 學經歷
-                    </h2>
-                    <div class="line"></div>
-                </div>
-                
-                <div class="H-line" style="height: 390px;"></div>
-
-                <div class="container">
-                    <div class="timeline_item">
-                        <div class="circle"></div>
-                        <div class="expText">
-                            <h2>雲林科技大學</h2>
-                            <p>
-                                中文假字產生器必定會成為未來世界的新標準。在這種不可避免的衝突下，我們必須解決這個問題。我們普遍認為，若能理解透徹核心原理，對其就有了一定的了解程度。中文假字產生器對我來說有著舉足輕重的地位，必須要嚴肅認真的看待。    
-                            </p>
+                    <div class="col-4 vertical-mid">
+                        <div>
+                            <h2 class="display-5 ">100%原生紙漿</h2>
+                            <p>使用後丟入馬桶，可直接分解於水中，不用擔心馬桶賭塞。</p>
                         </div>
+
                     </div>
                 </div>
-                <div class="container">
-                    <div class="timeline_item">
-                            <div class="circle"></div>
-                            <div class="expText">
-                            <h2>臺中高工</h2>
-                            <p>
-                                回過神才發現，思考中文假字產生器的存在意義，已讓我廢寢忘食。莫爾告訴我們，人生中最困難者，莫過於選擇。這句話讓我們得到了一個全新的觀點去思考這個問題。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="timeline_item">
-                        <div class="circle"></div>
-                        <div class="expText">
-                            <h2>南投國中</h2>
-                            <p>
-                                伊朗說過，心中所愛的人，總是美貌的。他會這麼說是有理由的。每個人的一生中，幾乎可說碰到中文假字產生器這件事，是必然會發生的。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
             </div>
         </div>
+    </section>
 
-        <div class="buttom">
-            <div class="C">老師對不起 我沒時間ㄌ 內文讓我用一下唬爛產生器QAQ</div>
+    <section id="page3" class="page">
+        <div class="bg-dark">
+            <div class="container-fluid nopadding">
+                <div class="row nopadding height-500px">
+                    <div class="col-4 offset-1 vertical-mid">
+                        <div>
+                            <h2 class="display-5 ">每抽 3 層厚度</h2>
+                            <p>三層厚度鬆軟舒適，給您最絲滑流暢的體驗。</p>
+
+                        </div>
+                    </div>
+                    <div class="col-7 nopadding vertical-mid">
+                        <img src="src/image/toilet-paper-3.png" class="img-fluid">
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="page4" class="page">
+        <div class="bg-dark">
+            <div class="container-fluid nopadding">
+                <div class="row nopadding height-500px">
+                    <div class="col-7 nopadding vertical-mid">
+                        <img src="src/image/toilet-paper-1.jpg" class="img-fluid">
+
+                    </div>
+                    <div class="col-4 vertical-mid">
+                        <div>
+
+                            <h2 class="display-5 ">5 項衛生檢驗合格</h2>
+                            <p>通過衛生署五大衛生檢驗，在使用的同時為您的肌膚做好把關。</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="page5" class="page">
+        <div class="bg-dark">
+            <div class="container-fluid nopadding">
+                <div class="row nopadding height-500px">
+                    <div class="col-4 offset-1 vertical-mid">
+                        <div>
+
+                            <h2 class="display-5 ">超大容量更升級</h2>
+                            <p>300抽×24包究極大容量，讓你不再頻繁找紙抽。</p>
+                        </div>
+
+                    </div>
+                    <div class="col-7 nopadding vertical-mid">
+                        <img src="src/image/toilet-paper-3.png" class="img-fluid">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="page6" class="page">
+        <div class="bg-dark">
+            <div class="container-fluid ">
+                <div class="row height-500px">
+                    <div class="col-3 offset-2 vertical-mid">
+                        <img src="src/image/google-home-half.png" class="img-fluid">
+
+                    </div>
+                    <div class="col-4 offset-1 vertical-mid">
+                        <div>
+
+                            <h2 class="display-5 ">居家智慧提醒補紙</h2>
+                            <p>支援Google Home提醒補紙功能，不用再光著屁股出來拿衛生紙。</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="page7" class="page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="display-4 text-center" style="margin-bottom: 100px; ">各種顏色，任君選擇</h2>
+
+                </div>
+                <div class="col-12 ">
+                    <!-- <h2 class="display-5 text-center" style="margin-bottom: 30px;">各種顏色，任君選擇</h2> -->
+
+                    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
+                        data-bs-interval="false">
+
+                        <div class="carousel-inner">
+                            <!-- item-1 -->
+                            <div class="carousel-item active">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_2.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-5 offset-1">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-red"></div>
+                                                    <h1 class="display-5 my-h1">魅力紅</h1>
+                                                </div>
+                                                <p>這個空間中的所有人都會臣服於它的魅力之下，它將成為空間中最吸睛的存在。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item-2 -->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_1.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-5 offset-1">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-org"></div>
+                                                    <h1 class="display-5 my-h1">海徹橙</h1>
+                                                </div>
+                                                <p>身處在海澈橙所發出的暖色光下，像是被毛茸茸的哈士奇圍繞一般，享受著無比的溫暖，讓毛茸茸大狗狗溫暖你那被現實社會折磨到早已冰冷的心。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item-3 -->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_3.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-5 offset-1">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-cyan"></div>
+                                                    <h1 class="display-5 my-h1">炫光藍</h1>
+                                                </div>
+                                                <p>喜歡科技感的人們，有誰能抗拒炫光藍呢，有了它，你的房間就是所有科技宅中最潮的。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item-4 -->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_4.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-5 offset-1">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-blue"></div>
+                                                    <h1 class="display-5 my-h1">青青石青</h1>
+                                                </div>
+                                                <p>青青石？欸！遠離這個！遠離這個！離開！離開！按離開！越遠越好！離開！我沒有碰你！我離開你了！對不起！對不起！對不起！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item-5 -->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_5.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-green"></div>
+                                                    <h1 class="display-5 my-h1">跟你頭頂一樣綠</h1>
+                                                </div>
+                                                <p>你不會期望這個發生的，對吧，但這很適合拿去報仇。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item-6 -->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_6.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-pink"></div>
+                                                    <h1 class="display-5 my-h1">台灣行動支付粉</h1>
+                                                </div>
+                                                <p>台灣行動支付與我方並無任何商業上的關係，但是掃碼付款真的很方便。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item-7 -->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_8.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-black"></div>
+                                                    <h1 class="display-5 my-h1">RGB只要都不發光就是黑</h1>
+                                                </div>
+                                                <p>很顯然的，我們的發色原理比較接近LCD，即使不發光也無法接近全黑，讓我們以此紀念早期OLED技術尚未流行前的時光。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item-8 -->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-4 offset-1">
+                                            <img src="src/image/_7.png" height="200px" class="d-block " alt="..."
+                                                style="margin: auto;">
+
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="circle color-white"></div>
+                                                    <h1 class="display-5 my-h1">跟純白日光燈打在鋼琴白鍵烤漆上的反光一樣白</h1>
+                                                </div>
+                                                <p>這次所推出的白色，如同純白日光燈在鋼琴白色烤漆上的反光一樣，展現出高貴的尊爵不凡，是所有系列中所無法比擬的</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="Form--div"></div>
+    <div class="Form--div"></div>
+
+    <section id="maimaimai" class="">
+        <div class="row nopadding">
+            <div class="col-8 offset-2 d-flex justify-content-center">
+
+                <a class="btn-coolest" href="/buy.html">前往購買HusTissue>></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer" class="container">
+        <div class="row">
+            <div class="col-12  footer">
+                <div class="footer-shop" x-ms-format-detection="none">
+                    更多選購方式：<a href="#" data-analytics-title="find an apple store">尋找當地的 HusTissue 直營店</a>或<a href="#"
+                        data-analytics-title="other retailers or resellers" data-analytics-exit-link="">其他零售商</a>，<span
+                        class="nowrap">或致電 0800-123-456。</span>
+                </div>
+                <div class="footer-locale">
+                    <a class="ac-gf-footer-locale-link" href="#" title="選擇你的國家或地區" aria-label="台灣. 選擇你的國家或地區"
+                        data-analytics-title="choose your country">台灣</a>
+                </div>
+                <div class="footer-legal">
+                    <div class="footer-legal-copyright">Copyright © 2022 HusTissue Inc. 保留一切權利。</div>
+                    <div class="footer-legal-links">
+                        <a class="footer-legal-link" href="/tw/legal/privacy/">隱私權政策</a>
+                        <a class="footer-legal-link" href="/tw/legal/internet-services/terms/site.html">使用條款</a>
+                        <a class="footer-legal-link" href="/tw/shop/goto/help/sales_refunds">銷售及退款</a>
+                        <a class="footer-legal-link" href="/tw/legal/">法律聲明</a>
+                        <a class="footer-legal-link" href="/tw/sitemap/">網站地圖</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- </div> -->
+
 </body>
+
 </html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tw">
+
+<head>
+    <title>HusTissue - Log in</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/react@latest/umd/react.development.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/babel-standalone@latest/babel.min.js" crossorigin="anonymous"></script>
+    <!--登入api-->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="login.js"></script>
+    <!--登入api-->
+    <!-- Fonts to support Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <!-- Icons to support Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-sm navbar-dark bg-dark  ">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center flex-row-reverse " href="/index.html">
+                <div class="padding-left">HusTissue</div>
+                <img src="/src/image/logo.png" width="35" height="35" class="d-inline-block align-text-top ">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="d-flex">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav" id="navbarliItems">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about-us.html">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/tech.html">技術規格</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/buy.html">購買</a>
+                        </li>
+                        <!--TODO 登出-->
+                    </ul>
+                    <a class="btn-coolest" id="login-member-center" href="/login.html">登入</a>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div id="root" style="height: 100vh;" class="bg-dark d-flex justify-content-center align-items-center"></div>
+    <script type="text/babel">
+        const {
+            Button,
+            colors,
+            CssBaseline,
+            ThemeProvider,
+            Typography,
+            Container,
+            createTheme,
+            Box,
+            SvgIcon,
+            Link,
+            TextField,
+            Avatar,
+            FormControlLabel,
+            Checkbox,
+            Grid,
+            LockOutlinedIcon
+        } = MaterialUI;
+
+        // Create a theme instance.
+        const theme = createTheme({
+            palette: {
+                mode: 'dark',
+                primary: {
+                    light: '#757ce8',
+                    main: '#00F0FF',
+                    dark: '#00c1cf',
+                    // contrastText: '#000',
+                },
+                secondary: {
+                    main: '#19857b',
+                },
+                error: {
+                    main: colors.red.A400,
+                },
+            },
+        });
+
+
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            const data = new FormData(event.currentTarget);
+            LoginSubmit(data.get('email'),data.get('password'));
+        };
+
+
+        function CustomForm() {
+            return (
+                <Box component="form" onSubmit={handleSubmit} className="Form">
+                    <div className="d-flex justify-content-center">
+                        <div className="d-flex flex-column">
+                            <img src="src/image/logo.png" alt="" />
+                            <h5 className="text-center">登入 / 註冊</h5>
+                        </div>
+                    </div>
+                    <div className="Form--div"></div>
+                    <TextField className="Form--input" id="TextField-Email" label="電子郵件" variant="outlined" name="email" />
+                    <div className="Form--div"></div>
+                    <TextField className="Form--input" id="TextField-Password" label="密碼" variant="outlined" type="password" name="password" />
+
+                    <div className="Form--div"></div>
+                    <div className="d-flex justify-content-between align-items-center">
+                        <Link herf="#" variant="body2">忘記密碼</Link>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                        >
+                            登入 / 註冊
+                        </Button>
+                    </div>
+                </Box>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+
+            <ThemeProvider theme={theme}>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <CssBaseline />
+                <Container maxWidth="sm">
+                    <CustomForm />
+                </Container>
+            </ThemeProvider>,
+        );
+    </script>
+</body>
+
+</html>

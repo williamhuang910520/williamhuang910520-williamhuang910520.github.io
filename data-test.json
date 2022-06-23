@@ -1,0 +1,64 @@
+{
+    "Orders": [
+        {
+            "orderID": 1,
+            "orderdate": "2022-06-27 13:56",
+            "isshipped": true,
+            "totalprice": 500,
+            "OrderDetail": [
+                {
+                    "productname": "HusTissuePro",
+                    "value": 1,
+                    "price": 100,
+                    "color": "red"
+                },
+                {
+                    "productname": "HusTissuePro",
+                    "value": 8,
+                    "price": 50,
+                    "color": "blue"
+                }
+            ]
+        },
+        {
+            "orderID": 2,
+            "orderdate": "2022-06-28 23:46",
+            "isshipped": true,
+            "totalprice": 500,
+            "OrderDetail": [
+                {
+                    "productname": "HusTissueULTRA",
+                    "value": 1,
+                    "price": 100,
+                    "color": "org"
+                },
+                {
+                    "productname": "HusTissue",
+                    "value": 8,
+                    "price": 50,
+                    "color": "pink"
+                }
+            ]
+        },
+        {
+            "orderID": 3,
+            "orderdate": "2022-06-28 23:46",
+            "isshipped": true,
+            "totalprice": 500,
+            "OrderDetail": [
+                {
+                    "productname": "HusTissueULTRA",
+                    "value": 1,
+                    "price": 100,
+                    "color": "green"
+                },
+                {
+                    "productname": "HusTissuePRO",
+                    "value": 8,
+                    "price": 50,
+                    "color": "white"
+                }
+            ]
+        }
+    ]
+}

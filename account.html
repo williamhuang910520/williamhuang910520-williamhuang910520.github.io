@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="tw">
+
+<head>
+    <title>HusTissue - Member</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/src/style.css">
+    <script src="https://unpkg.com/react@latest/umd/react.development.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/babel-standalone@latest/babel.min.js" crossorigin="anonymous"></script>
+    <!-- Fonts to support Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <!-- Icons to support Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!--登入api-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="login.js"></script>
+
+    <!--登入api-->
+    <script src="jquery-dateformat.min.js"></script>
+
+    <script src="account-sidebar.js"></script>
+    <!-- <script src="hide-navbar.js"></script> -->
+    <script src="render-orders.js"></script>
+    <!-- <script type="text/javascript" src="data-test.json"></script> -->
+</head>
+
+<body class="bg-dark">
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- <div class="container"> -->
+    <nav id="navbar" class="navbar navbar-expand-sm navbar-dark bg-dark  ">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center flex-row-reverse " href="/index.html">
+                <div class="padding-left">HusTissue</div>
+                <img src="/src/image/logo.png" width="35" height="35" class="d-inline-block align-text-top ">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="d-flex">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav" id="lnavbarliItems">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about-us.html">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/tech.html">技術規格</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/buy.html">購買</a>
+                        </li>
+                    </ul>
+                    <a class="btn-coolest" id="login-member-center" href="/login.html">登入</a>
+
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 130px">
+        <div class="row">
+            <div class="col-3 offset-1">
+                <div id="account-sidebar" class="account-sidebar ">
+                    <div class="logo-content">
+                        <img src="src/image/logo.png" width="130px" alt="">
+                        <span id="side-name-tag"></span>
+                    </div>
+                    <ul id="account-sidebar-list">
+                        <li class="onSelected">
+                            <a href="#">
+                                <i class='bx bx-user'></i>
+                                <span>會員資料</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-cart-alt'></i>
+                                <span>訂單資訊</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-wallet'></i>
+                                <span>紅利點數</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-question-mark'></i>
+                                <span>客服問答</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-7">
+                <div id="root"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <section id="footer" class="container">
+        <div class="row">
+            <div class="col-12  footer">
+                <div class="footer-shop" x-ms-format-detection="none">
+                    更多選購方式：<a href="#" data-analytics-title="find an apple store">尋找當地的 HusTissue 直營店</a>或<a href="#"
+                        data-analytics-title="other retailers or resellers" data-analytics-exit-link="">其他零售商</a>，<span
+                        class="nowrap">或致電 0800-123-456。</span>
+                </div>
+                <div class="footer-locale">
+                    <a class="ac-gf-footer-locale-link" href="#" title="選擇你的國家或地區" aria-label="台灣. 選擇你的國家或地區"
+                        data-analytics-title="choose your country">台灣</a>
+                </div>
+                <div class="footer-legal">
+                    <div class="footer-legal-copyright">Copyright © 2022 HusTissue Inc. 保留一切權利。</div>
+                    <div class="footer-legal-links">
+                        <a class="footer-legal-link" href="/tw/legal/privacy/">隱私權政策</a>
+                        <a class="footer-legal-link" href="/tw/legal/internet-services/terms/site.html">使用條款</a>
+                        <a class="footer-legal-link" href="/tw/shop/goto/help/sales_refunds">銷售及退款</a>
+                        <a class="footer-legal-link" href="/tw/legal/">法律聲明</a>
+                        <a class="footer-legal-link" href="/tw/sitemap/">網站地圖</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <script type="text/babel">
+
+        const {
+            Button,
+            colors,
+            CssBaseline,
+            ThemeProvider,
+            Typography,
+            Container,
+            createTheme,
+            Box,
+            SvgIcon,
+            Link,
+            TextField,
+            Avatar,
+            FormControlLabel,
+            Checkbox,
+            Grid,
+            LockOutlinedIcon
+        } = MaterialUI;
+
+        // Create a theme instance.
+        const theme = createTheme({
+            palette: {
+                mode: 'dark',
+                primary: {
+                    light: '#757ce8',
+                    main: '#00F0FF',
+                    dark: '#00c1cf',
+                    // contrastText: '#000',
+                },
+                secondary: {
+                    main: '#19857b',
+                },
+                error: {
+                    main: colors.red.A400,
+                },
+            },
+        });
+
+        $("#account-sidebar-list>li").each(function (index) {
+            $(this).click(() => {
+                $("#account-sidebar-list>li").removeClass("onSelected");
+                $(this).addClass("onSelected");
+                switch ($(this).find("span").text()) {
+                    case "會員資料":
+                        memberInfo_DiaplayUserInfo();
+                        break;
+                    case "訂單資訊":
+                        orderInfo_ViewAllOrderInfo();
+                        break;
+                    case "紅利點數":
+                        // orderInfo_ViewAllOrderInfo();
+                        Welcome2UnfinishedArea();
+                        break;
+                    case "客服問答":
+                        // orderInfo_ViewAllOrderInfo();
+                        Welcome2UnfinishedArea();
+                        break;
+                }
+                // console.log($(this).find("span").text());
+
+            });
+        });
+
+
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            const data = new FormData(event.currentTarget);
+
+
+
+            var arr =
+            {
+                Session: $.cookie('session'),
+                address: data.get('address'),
+                email: data.get('email'),
+                name: data.get('name'),
+                phone: data.get('phone')
+            };
+
+            $.ajax({
+                url: backendurl + '/api/updateaccount',
+                type: 'POST',
+                data: JSON.stringify(arr),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    memberInfo_DiaplayUserInfo();
+                }
+
+            });
+
+
+
+
+
+            console.log({
+                name: data.get('name'),
+                email: data.get('email'),
+                phone: data.get('phone'),
+                address: data.get('address')
+            });
+
+            // TODO UPLOAD DATA
+
+
+        };
+
+
+        function MemberInfo(userdata) {
+            console.log(userdata);
+            return (
+                <form className="member-info" action="" method="POST">
+                    <h1>會員資料</h1>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '& > :not(style)': { m: 2 },
+                        }}
+                    >
+                        <TextField disabled fullWidth margin="normal" defaultValue={userdata.user.name} className="member-info-TextField" label="姓名" variant="outlined" name="name" />
+                        <TextField disabled fullWidth margin="normal" defaultValue={userdata.user.phone} className="member-info-TextField" label="行動電話" variant="outlined" name="phone" />
+                    </Box>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '& > :not(style)': { m: 2 },
+                        }}
+                    >
+                        <TextField disabled fullWidth margin="normal" defaultValue={userdata.user.email} className="member-info-TextField" label="電子郵件" variant="outlined" name="email" />
+                    </Box>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '& > :not(style)': { m: 2 },
+                        }}
+                    >
+                        <TextField disabled fullWidth margin="normal" defaultValue={userdata.user.address} className="member-info-TextField" label="配送地址" variant="outlined" name="address" />
+                    </Box>
+                    <div className="t">
+                        <a id="editUserInfo" herf="#" onClick={() => {
+                            memberInfo_EnableEditUserInfo();
+                        }} >修改會員資料</a>
+                    </div>
+                </form>
+            )
+        }
+
+        function MemberInfoEditable(userdata) {
+
+            return (
+                <Box component="form" onSubmit={handleSubmit} className="member-info" action="" method="POST">
+                    <div className="d-flex justify-content-between">
+                        <h1>會員資料</h1>
+                        <Button
+                            className="d-flex align-self-center"
+                            type="submit"
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                        >
+                            確定
+                        </Button>
+                    </div>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '& > :not(style)': { m: 2 },
+                        }}
+                    >
+                        <TextField fullWidth margin="normal" defaultValue={userdata.user.name} className="member-info-TextField" label="姓名" variant="outlined" name="name" />
+                        <TextField fullWidth margin="normal" defaultValue={userdata.user.phone} className="member-info-TextField" label="行動電話" variant="outlined" name="phone" />
+                    </Box>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '& > :not(style)': { m: 2 },
+                        }}
+                    >
+                        <TextField fullWidth margin="normal" defaultValue={userdata.user.email} className="member-info-TextField" label="電子郵件" variant="outlined" name="email" />
+                    </Box>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '& > :not(style)': { m: 2 },
+                        }}
+                    >
+                        <TextField fullWidth margin="normal" defaultValue={userdata.user.address} className="member-info-TextField" label="配送地址" variant="outlined" name="address" />
+                    </Box>
+
+                </Box>
+            )
+        }
+
+        // render element
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        memberInfo_DiaplayUserInfo();
+        // orderInfo_ViewAllOrderInfo();
+
+
+        function memberInfo_DiaplayUserInfo() {
+            var arr =
+            {
+                Session: $.cookie('session')
+            };
+
+            $.ajax({
+                url: backendurl + '/api/account',
+                type: 'POST',
+                data: JSON.stringify(arr),
+                contentType: 'application/json',
+
+                dataType: 'json',
+                success: function (data) {
+                    $("#side-name-tag").text(data.name);
+                    root.render(
+                        <ThemeProvider theme={theme}>
+                            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                            <CssBaseline />
+                            <Container maxWidth={false}>
+                                <MemberInfo user={data} />
+                            </Container>
+                        </ThemeProvider>,
+                    );
+                }
+            });
+
+        }
+
+        function memberInfo_EnableEditUserInfo() {
+            var arr =
+            {
+                Session: $.cookie('session')
+            };
+
+            $.ajax({
+                url: backendurl + '/api/account',
+                type: 'POST',
+                data: JSON.stringify(arr),
+                contentType: 'application/json',
+
+                dataType: 'json',
+                success: function (data) {
+                    $("#side-name-tag").text(data.name);
+                    root.render(
+                        <ThemeProvider theme={theme}>
+                            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                            <CssBaseline />
+                            <Container maxWidth={false}>
+                                <MemberInfoEditable user={data} />
+                            </Container>
+                        </ThemeProvider>,
+                    );
+
+                }
+            });
+
+        }
+
+        function orderInfo_ViewAllOrderInfo() {
+            root.render(
+                <ThemeProvider theme={theme}>
+                    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                    <CssBaseline />
+                    <Container maxWidth={false}>
+                        <form className="member-info" action="" method="POST">
+                            <h1>訂單資訊</h1>
+                            <div id="order-container"></div>
+                        </form>
+                    </Container>
+                </ThemeProvider>,
+            );
+            console.log($("#order-container"));
+            getordersdetail()
+
+
+
+
+        }
+
+        
+
+        function Welcome2UnfinishedArea() {
+            root.render(
+                <ThemeProvider theme={theme}>
+                    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                    <CssBaseline />
+                    <Container maxWidth={false}>
+                        <section id="about-us-page1" class="page nopadding">
+                            <div className="p-5 bg-dark about-us-pageN">
+                                <div class="row ">
+                                    <h1 className="display-4 text-center">歡迎來到未完工的區域</h1>
+                                    <div className="col-6 offset-3">
+                                        <p className="text-center">
+                                            如果喜歡我們的作品的話
+                                            歡迎留下您的評價喔
+                                            BY:機器人後端工程師
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </Container>
+                </ThemeProvider>,
+            );
+        }
+
+
+    </script>
+</body>
+
+</html>
