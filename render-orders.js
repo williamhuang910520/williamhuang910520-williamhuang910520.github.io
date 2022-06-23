@@ -78,28 +78,28 @@ function color2ImgSrc(color) {
             img = "/src/image/_2.png";
             break;
         case "org":
-            img = "/src/image/_1.png";
+            img = "/src/image/1_.png";
             break;
         case "pink":
-            img = "/src/image/_6.png";
+            img = "/src/image/6_.png";
             break;
         case "cyan":
-            img = "/src/image/_3.png";
+            img = "/src/image/3_.png";
             break;
         case "green":
-            img = "/src/image/_5.png";
+            img = "/src/image/5_.png";
             break;
         case "blue":
-            img = "/src/image/_4.png";
+            img = "/src/image/4_.png";
             break;
         case "black":
-            img = "/src/image/_8.png";
+            img = "/src/image/8_.png";
             break;
         case "white":
-            img = "/src/image/_7.png";
+            img = "/src/image/7_.png";
             break;
         default:
-            img = "/src/image/_2.png";
+            img = "/src/image/2_.png";
     };
     return img;
 }
