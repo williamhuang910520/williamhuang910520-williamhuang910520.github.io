@@ -75,7 +75,7 @@ function color2ImgSrc(color) {
     let img = '';
     switch (color) {
         case "red":
-            img = "/src/image/_2.png";
+            img = "/src/image/2_.png";
             break;
         case "org":
             img = "/src/image/1_.png";
